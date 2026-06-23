@@ -18,8 +18,8 @@ function Quiz() {
     setUser(parsedUser);
 
     Promise.all([
-      axios.get('http://localhost:5000/api/quiz/questions'),
-      axios.get(`http://localhost:5000/api/quiz/my-attempts/${parsedUser.id}`)
+      axios.get('https://ecoeducation-backend.onrender.com/api/quiz/questions'),
+      axios.get(`https://ecoeducation-backend.onrender.com/api/quiz/my-attempts/${parsedUser.id}`)
     ]).then(([questionsRes, attemptsRes]) => {
       setQuestions(questionsRes.data);
 
@@ -52,7 +52,7 @@ function Quiz() {
     if (attempts[quiz._id]) return;
 
     try {
-      const response = await axios.post('http://localhost:5000/api/quiz/submit', {
+      const response = await axios.post('https://ecoeducation-backend.onrender.com/api/quiz/submit', {
         userId: user.id,
         quizId: quiz._id,
         selectedAnswer

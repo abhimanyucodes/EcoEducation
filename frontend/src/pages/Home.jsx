@@ -26,7 +26,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/news')
+      .get('https://ecoeducation-backend.onrender.com/api/news')
       .then((response) => {
         setNews(response.data);
         setNewsLoading(false);

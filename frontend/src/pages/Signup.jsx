@@ -15,7 +15,7 @@ function Signup() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', formData);
+      const response = await axios.post('https://ecoeducation-backend.onrender.com/api/auth/signup', formData);
       localStorage.setItem('user', JSON.stringify(response.data.user));
       navigate('/');
     } catch (error) {

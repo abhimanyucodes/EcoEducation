@@ -7,7 +7,7 @@ function Leaderboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/leaderboard')
+    axios.get('https://ecoeducation-backend.onrender.com/api/leaderboard')
       .then((response) => {
         setLeaders(response.data);
         setLoading(false);
